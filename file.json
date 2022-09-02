@@ -1,0 +1,44 @@
+{
+    "BaseModel.17678154-06a3-4605-ae8d-174476a43de9": {
+        "id": "17678154-06a3-4605-ae8d-174476a43de9",
+        "created_at": "2022-09-02T17:36:08.550072",
+        "updated_at": "2022-09-02T17:36:08.550080",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.44d99635-3fda-4fe7-b50f-0630e66a409e": {
+        "id": "44d99635-3fda-4fe7-b50f-0630e66a409e",
+        "created_at": "2022-09-02T17:36:23.139126",
+        "updated_at": "2022-09-02T17:36:23.139181",
+        "__class__": "BaseModel"
+    },
+    "User.88e5c888-cf97-4d9d-92f5-3377fe1740bd": {
+        "id": "88e5c888-cf97-4d9d-92f5-3377fe1740bd",
+        "created_at": "2022-09-02T17:37:03.156281",
+        "updated_at": "2022-09-02T17:37:03.156289",
+        "__class__": "User"
+    },
+    "Place.1d6a8aab-fab0-4ce7-9127-baddc818ff01": {
+        "id": "1d6a8aab-fab0-4ce7-9127-baddc818ff01",
+        "created_at": "2022-09-02T17:37:16.164092",
+        "updated_at": "2022-09-02T17:37:16.164099",
+        "__class__": "Place"
+    },
+    "City.9ff3e9ee-8cb5-43ff-b7eb-ff9164aff9b0": {
+        "id": "9ff3e9ee-8cb5-43ff-b7eb-ff9164aff9b0",
+        "created_at": "2022-09-02T17:37:21.391631",
+        "updated_at": "2022-09-02T17:37:21.391638",
+        "__class__": "City"
+    },
+    "Review.6f144074-33ec-4882-a517-13fae0313722": {
+        "id": "6f144074-33ec-4882-a517-13fae0313722",
+        "created_at": "2022-09-02T17:37:43.281075",
+        "updated_at": "2022-09-02T17:37:43.281081",
+        "__class__": "Review"
+    },
+    "Place.a80fbab3-fe1e-4274-8a44-9a52d679bf60": {
+        "id": "a80fbab3-fe1e-4274-8a44-9a52d679bf60",
+        "created_at": "2022-09-02T17:38:03.503408",
+        "updated_at": "2022-09-02T17:38:03.503414",
+        "__class__": "Place"
+    }
+}

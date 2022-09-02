@@ -1,0 +1,41 @@
+#!/usr/bin/python3
+"""This module defines class FileStorage that serializes instances to a JSON
+file and deserializes JSON file to instances.
+"""
+import json
+
+
+class FileStorage:
+    """Represents a FileStorage class."""
+    __file_path = "file.json"   # path to JSON file
+    __objects = {}  # stores all objects with format - <class name>.id
+
+
+    def __init__(self):
+        """Initializes a FileStorage class instance."""
+        def all(self):
+            """returns the object dictionary"""
+            return self.__objects
+
+        def new(self, obj):
+            """Sets in `__objects` the object `obj`
+            with key `<obj class name>.id`
+
+            Args:
+                obj (object): new FileStorage object
+            """
+            self.__objects[(obj.__class__.__name__).id] = obj
+
+        def save(self):
+            """serializes `__objects` to JSON file."""
+            with open(self.__file_path, 'w', encoding="utf-8") as f:
+                json.dump(self.__objects, f)
+
+    def reload(self):
+        """deserializes the JSON file to `__objects`."""
+        try:
+            with open(self.__file_path, 'r', encoding='utf-8') as f:
+                self.__objects = json.load(f)
+        except FileNotFoundError:
+            pass
+
