@@ -35,10 +35,55 @@
         "updated_at": "2022-09-02T17:37:43.281081",
         "__class__": "Review"
     },
-    "Place.a80fbab3-fe1e-4274-8a44-9a52d679bf60": {
-        "id": "a80fbab3-fe1e-4274-8a44-9a52d679bf60",
-        "created_at": "2022-09-02T17:38:03.503408",
-        "updated_at": "2022-09-02T17:38:03.503414",
+    "BaseModel.6147e39d-27d8-456c-88d1-4d97a480e8db": {
+        "id": "6147e39d-27d8-456c-88d1-4d97a480e8db",
+        "created_at": "2022-09-03T03:28:30.389863",
+        "updated_at": "2022-09-03T03:28:30.389874",
+        "__class__": "BaseModel"
+    },
+    "City.0dd63a1a-0db5-4e45-b6ba-6aaf5989a186": {
+        "id": "0dd63a1a-0db5-4e45-b6ba-6aaf5989a186",
+        "created_at": "2022-09-03T03:28:36.636537",
+        "updated_at": "2022-09-03T03:28:36.636548",
+        "__class__": "City"
+    },
+    "Place.10ca0f56-aa0e-456c-bd7f-8dce3213c12f": {
+        "id": "10ca0f56-aa0e-456c-bd7f-8dce3213c12f",
+        "created_at": "2022-09-03T03:28:44.058827",
+        "updated_at": "2022-09-03T03:28:44.058838",
         "__class__": "Place"
+    },
+    "User.41181c99-5bdf-4823-8174-3f42cb625e33": {
+        "id": "41181c99-5bdf-4823-8174-3f42cb625e33",
+        "created_at": "2022-09-03T04:05:30.831198",
+        "updated_at": "2022-09-03T07:01:42.123849",
+        "name": "James",
+        "age": "24",
+        "__class__": "User"
+    },
+    "City.3d1285c3-fe76-42a1-8326-58070fbbe5bf": {
+        "id": "3d1285c3-fe76-42a1-8326-58070fbbe5bf",
+        "created_at": "2022-09-03T04:15:14.915056",
+        "updated_at": "2022-09-03T04:15:14.915158",
+        "__class__": "City"
+    },
+    "State.5106409b-8832-4e6f-af37-889d836caa38": {
+        "id": "5106409b-8832-4e6f-af37-889d836caa38",
+        "created_at": "2022-09-03T05:21:49.831697",
+        "updated_at": "2022-09-03T05:21:49.831704",
+        "__class__": "State"
+    },
+    "Review.f009acad-6c6e-483b-bda3-99ea3c71a5c8": {
+        "id": "f009acad-6c6e-483b-bda3-99ea3c71a5c8",
+        "created_at": "2022-09-03T06:46:50.825689",
+        "updated_at": "2022-09-03T06:46:50.825696",
+        "__class__": "Review"
+    },
+    "User.1f8067ae-aaa6-43d9-a736-b0330519cb74": {
+        "id": "1f8067ae-aaa6-43d9-a736-b0330519cb74",
+        "created_at": "2022-09-03T06:49:31.504178",
+        "updated_at": "2022-09-03T06:56:38.075931",
+        "name": "Rose",
+        "__class__": "User"
     }
 }
