@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/CaptainAril/AirBnB_clone/img/ass1.png" alt="HBnB HBnB-logo">
+  <img src="https://raw.githubusercontent.com/CaptainAril/AirBnB_clone/master/img/ass1.png">
 </p>
 
 
@@ -15,7 +15,7 @@ The Alx AirBnB clone is a complete web application, integrating database storage
 This team project is part of the (Alx) Holberton School Software Engineering program. </br>
 It represents the first step towards building a full web application.
 
-#Concept used in the project
+# Concept used in the project
 
 ### Unittest - and please work all together on tests cases
 ### Python packages concept page
