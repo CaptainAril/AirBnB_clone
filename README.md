@@ -84,6 +84,12 @@ EOF  help  quit
 $
 ```
 
+## Execution:
+<p align="center">
+    <img src="https://raw.githubusercontent.com/CaptainAril/AirBnB_clone/master/img/ass2.png">
+</p>
+
+
 ## Testing :straight_ruler:
 
 The UnitTests for this Project are place and defined in the [tests](./tests)
