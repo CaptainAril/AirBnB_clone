@@ -31,7 +31,6 @@ class BaseModel:
             self.updated_at = datetime.now()
             models.storage.new(self)
 
-
     def __str__(self):
         """returns the string representation of BaseModel instance.
         """
