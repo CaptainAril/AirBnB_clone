@@ -17,7 +17,6 @@ class FileStorage:
     __file_path = "file.json"   # path to JSON file
     __objects = {}  # stores all objects with format - <class name>.id
 
-
     def all(self):
         """returns the object dictionary"""
         return FileStorage.__objects
@@ -50,10 +49,10 @@ class FileStorage:
 
             new_dict = {}
             for obj_name, obj_details in _dict.items():
-               # print(f"{obj_name} -> {obj_details}")
-                
+                # print(f"{obj_name} -> {obj_details}")
+
                 _class = eval(obj_details["__class__"])
-               # print(_class)
+            # print(_class)
                 obj = _class(**obj_details)
                 new_dict[obj_name] = obj
 
