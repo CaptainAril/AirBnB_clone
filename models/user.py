@@ -6,6 +6,6 @@ from .base_model import BaseModel
 class User(BaseModel):
     """Represents call User that inherits from BaseModel."""
     email = ""
-    password = "jk"
+    password = ""
     first_name = ""
     last_name = ""

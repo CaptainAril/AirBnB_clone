@@ -3,7 +3,7 @@
 for the console command interpreter.
 """
 import cmd
-from ntpath import join
+import re
 from models import storage
 from models.base_model import BaseModel
 from models.user import User
@@ -29,6 +29,22 @@ class HBNBComand(cmd.Cmd):
         "Review"
         )
 
+    str_dict = None
+
+    def precmd(self, line):
+        if '.' in line:
+            if '{' in line:
+                dict_ = re.search("{([^}]*)}", line).group(0)
+                HBNBComand.str_dict = eval(dict_)
+                pass
+
+            line_arg = line.replace('.', ' ').replace(', ', ' ').replace('(', ' ').replace(')', ' ')
+
+            line_arg = line_arg.split()
+            line_arg[0], line_arg[1] = line_arg[1], line_arg[0]
+            if 
+            line = ' '.join(line_arg)
+        return cmd.Cmd().precmd(line)
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
@@ -47,7 +63,7 @@ class HBNBComand(cmd.Cmd):
         if args[0] not in HBNBComand.class_model:
             print("** class doesn't exist **")
             return True
-        if len(args) < 2 and command not in ('create', 'all'):
+        if len(args) < 2 and command not in ('create', 'all', 'count'):
             print("** instance id missing **")
             return True
 
@@ -56,6 +72,7 @@ class HBNBComand(cmd.Cmd):
             key = f"{args[0]}.{args[1]}"
             _str = obj.get(key)
             if _str is None:
+               # print(_str)
                 print("** no instance found **")
                 return True
 
@@ -119,6 +136,7 @@ class HBNBComand(cmd.Cmd):
         """Updates an instance based on the class name and id\
             by adding or updating attribute"""
         args = line.split()
+        
         if HBNBComand.HBNBError(line, "update"):
             return
         if  len(args) < 3:
@@ -127,41 +145,36 @@ class HBNBComand(cmd.Cmd):
         if len(args) < 4:
             print("** value missing **")
             return
-        print(f"key/value -> {args[2]}: {args[3]}")
 
         obj_dict = storage.all()
         key = f"{args[0]}.{args[1]}"
-        print(key)
         item = obj_dict.get(key)
-        print(item)
-        # print(type(item))
-        # eval(item)[args[2]] = args[3]
-        # storage.save()
-        #  obj = eval(key)
-        setattr(item, args[2], args[3])
+
+        if HBNBComand.str_dict:
+            print(HBNBComand.str_dict)
+            for key, value in HBNBComand.str_dict:
+                setattr(item, key, value)
+        else:
+
+            setattr(item, args[2], args[3])
         item.save()
-        #obj[args[2]] = args[3]
         storage.save()
 
+    def do_count(self, line):
+        if HBNBComand.HBNBError(line, "count"):
+            return
+        count = 0
+        args = line.split()
+        obj = storage.all()
 
-        pass
+        key = args[0]
+        for item in obj:
+            if key in item:
+                count += 1
+        print(count)
         
     def emptyline(self):
         pass
 
-    # def default(self, line):
-    #     args = line.split()
-    #     print(args)
-
-    # def parseline(self, line):
-    #     print(line)
-
-
 if __name__ == "__main__":
     HBNBComand().cmdloop()
-    # import sys
-    # input = open(sys.argv[1], 'rt')
-    # try:
-    #     HelloWorld(stdin=input).cmdloop()
-    # finally:
-    #     input.close()
