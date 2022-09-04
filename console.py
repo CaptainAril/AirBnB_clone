@@ -13,6 +13,7 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
+
 class HBNBComand(cmd.Cmd):
     intro = "Welcome to the AirBnB Console.\
         Type help to list commands.\n"
@@ -29,6 +30,7 @@ class HBNBComand(cmd.Cmd):
         "Review"
         )
 
+
     str_dict = None
 
     def precmd(self, line):
@@ -42,7 +44,7 @@ class HBNBComand(cmd.Cmd):
 
             line_arg = line_arg.split()
             line_arg[0], line_arg[1] = line_arg[1], line_arg[0]
-            if 
+
             line = ' '.join(line_arg)
         return cmd.Cmd().precmd(line)
 
@@ -67,7 +69,7 @@ class HBNBComand(cmd.Cmd):
             print("** instance id missing **")
             return True
 
-        if command  in ("show", "delete", "update"):
+        if command in ("show", "delete", "update"):
             obj = storage.all()
             key = f"{args[0]}.{args[1]}"
             _str = obj.get(key)
@@ -83,12 +85,11 @@ class HBNBComand(cmd.Cmd):
         args = line.split()
         if HBNBComand.HBNBError(line, "create"):
             return
-        
+
         class_ = eval(args[0])
         obj_ = class_()
         print(obj_.__dict__["id"])
         storage.save()
-
 
     def do_show(self, line):
         """Prints string representation of instance
@@ -96,7 +97,7 @@ class HBNBComand(cmd.Cmd):
         args = line.split()
         if HBNBComand.HBNBError(line, "show"):
             return
-        
+
         obj_dict = storage.all()
         key = f"{args[0]}.{args[1]}"
         _str = obj_dict.get(key)
@@ -120,18 +121,18 @@ class HBNBComand(cmd.Cmd):
 
         if args:
             if HBNBComand.HBNBError(line, 'all'):
-                return   
+                return
             key = args[0]
             for item in obj:
                 if key in item:
                     _str.append(str(obj.get(item)))
-        
-        else:  
+
+        else:
             for item in obj:
                 _str.append(str(obj.get(item)))
         ", ".join(_str)
         print(_str)
-    
+
     def do_update(self, line):
         """Updates an instance based on the class name and id\
             by adding or updating attribute"""
@@ -139,7 +140,7 @@ class HBNBComand(cmd.Cmd):
         
         if HBNBComand.HBNBError(line, "update"):
             return
-        if  len(args) < 3:
+        if len(args) < 3:
             print("** attribute name missing **")
             return
         if len(args) < 4:
@@ -173,6 +174,11 @@ class HBNBComand(cmd.Cmd):
                 count += 1
         print(count)
         
+        # obj[args[2]] = args[3]
+        storage.save()
+
+        pass
+
     def emptyline(self):
         pass
 
