@@ -23,5 +23,90 @@
         "updated_at": "2022-09-03T22:18:19.169696",
         "{'first_name':": "\"John\"",
         "__class__": "User"
+    },
+    "User.ec1f131b-e554-4b8a-ae30-4ef9a1efacc9": {
+        "id": "ec1f131b-e554-4b8a-ae30-4ef9a1efacc9",
+        "created_at": "2022-09-04T08:12:30.866744",
+        "updated_at": "2022-09-04T08:33:36.380840",
+        "first_name": "Adebayo",
+        "age": 10,
+        "Surname": "Adejumo",
+        "class": "JSS 1",
+        "mother": "Omotola Bada",
+        "__class__": "User"
+    },
+    "User.4452bef1-954b-43a7-83b0-e85f7cb3f6a2": {
+        "id": "4452bef1-954b-43a7-83b0-e85f7cb3f6a2",
+        "created_at": "2022-09-04T08:34:03.989456",
+        "updated_at": "2022-09-04T08:35:29.076248",
+        "name": "Heather",
+        "Surname": "Tijani",
+        "age": 3,
+        "class": "Kindergaten",
+        "mother": "Gbemisola Tijani",
+        "__class__": "User"
+    },
+    "BaseModel.0a178627-cd8f-439e-b825-ef3e6bf4aca4": {
+        "id": "0a178627-cd8f-439e-b825-ef3e6bf4aca4",
+        "created_at": "2022-09-04T20:01:34.882433",
+        "updated_at": "2022-09-04T20:01:34.882730",
+        "name": "My First Model",
+        "my_number": 89,
+        "__class__": "BaseModel"
+    },
+    "BaseModel.7435fc00-c079-4f0c-896c-f2ad8f2538b5": {
+        "id": "7435fc00-c079-4f0c-896c-f2ad8f2538b5",
+        "created_at": "2022-09-04T20:05:23.931914",
+        "updated_at": "2022-09-04T20:05:23.931924",
+        "name": "My_First_Model",
+        "my_number": 89,
+        "__class__": "BaseModel"
+    },
+    "BaseModel.b067fff6-7a1e-4713-ac5f-3a5651e07b11": {
+        "id": "b067fff6-7a1e-4713-ac5f-3a5651e07b11",
+        "created_at": "2022-09-04T20:06:29.184350",
+        "updated_at": "2022-09-04T20:06:29.184362",
+        "name": "My_First_Model",
+        "my_number": 89,
+        "__class__": "BaseModel"
+    },
+    "User.1f1ba6a3-fd0f-43b0-9db0-d36a94ce2f5c": {
+        "id": "1f1ba6a3-fd0f-43b0-9db0-d36a94ce2f5c",
+        "created_at": "2022-09-04T20:18:00.761599",
+        "updated_at": "2022-09-04T20:18:00.761612",
+        "first_name": "Betty",
+        "last_name": "Bar",
+        "email": "airbnb@mail.com",
+        "password": "root",
+        "__class__": "User"
+    },
+    "User.d3c31697-c88b-459f-a18c-0b0c848b8c0e": {
+        "id": "d3c31697-c88b-459f-a18c-0b0c848b8c0e",
+        "created_at": "2022-09-04T20:18:00.763024",
+        "updated_at": "2022-09-04T20:18:00.763047",
+        "first_name": "John",
+        "email": "airbnb2@mail.com",
+        "password": "root",
+        "__class__": "User"
+    },
+    "User.92754bb6-f9ba-46f0-b03b-d18cfa656834": {
+        "id": "92754bb6-f9ba-46f0-b03b-d18cfa656834",
+        "created_at": "2022-09-04T20:18:34.349435",
+        "updated_at": "2022-09-04T20:18:34.349461",
+        "first_name": "John",
+        "email": "airbnb2@mail.com",
+        "password": "root",
+        "__class__": "User"
+    },
+    "City.eb2d8d43-137a-413a-a814-5d34a084e78c": {
+        "id": "eb2d8d43-137a-413a-a814-5d34a084e78c",
+        "created_at": "2022-09-04T20:24:42.969435",
+        "updated_at": "2022-09-04T20:37:23.584886",
+        "name": "Abuja",
+        "\"age\"": "100",
+        "first_name": "John",
+        "age": "100",
+        "location": "Central Nigerial",
+        "__class__": "City"
     }
 }

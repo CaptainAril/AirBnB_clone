@@ -15,9 +15,6 @@ from models.review import Review
 
 
 class HBNBComand(cmd.Cmd):
-    intro = "Welcome to the AirBnB Console.\
-        Type help to list commands.\n"
-
     prompt = "(hbnb) "
 
     class_model = (
@@ -30,13 +27,19 @@ class HBNBComand(cmd.Cmd):
         "Review"
         )
 
-
     str_dict = None
+
+    @classmethod
+    def striped(cls, arg):
+        return arg[1:-1]
 
     def precmd(self, line):
         if '.' in line:
             if '{' in line:
-                dict_ = re.search("{([^}]*)}", line).group(0)
+                dict_ = re.search("{([^}]*)}", line)
+                if not dict_:
+                    return cmd.Cmd().precmd(line)
+                dict_ = dict_.group(0)
                 HBNBComand.str_dict = eval(dict_)
                 pass
 
@@ -44,10 +47,14 @@ class HBNBComand(cmd.Cmd):
 
             line_arg = line_arg.split()
             line_arg[0], line_arg[1] = line_arg[1], line_arg[0]
-
+            if len(line_arg) > 2:
+                if "\"" in line_arg[2]:
+                    line_arg[2] = HBNBComand.striped(line_arg[2])
             line = ' '.join(line_arg)
+
         return cmd.Cmd().precmd(line)
 
+    
     def do_quit(self, arg):
         """Quit command to exit the program"""
         return True
@@ -74,7 +81,6 @@ class HBNBComand(cmd.Cmd):
             key = f"{args[0]}.{args[1]}"
             _str = obj.get(key)
             if _str is None:
-               # print(_str)
                 print("** no instance found **")
                 return True
 
@@ -152,11 +158,11 @@ class HBNBComand(cmd.Cmd):
         item = obj_dict.get(key)
 
         if HBNBComand.str_dict:
-            print(HBNBComand.str_dict)
-            for key, value in HBNBComand.str_dict:
+            for key in HBNBComand.str_dict:
+                value = HBNBComand.str_dict[key]
                 setattr(item, key, value)
+            HBNBComand.str_dict = None
         else:
-
             setattr(item, args[2], args[3])
         item.save()
         storage.save()
@@ -173,11 +179,7 @@ class HBNBComand(cmd.Cmd):
             if key in item:
                 count += 1
         print(count)
-        
-        # obj[args[2]] = args[3]
         storage.save()
-
-        pass
 
     def emptyline(self):
         pass

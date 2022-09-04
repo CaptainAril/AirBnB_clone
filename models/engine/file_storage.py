@@ -29,7 +29,6 @@ class FileStorage:
             obj (object): new FileStorage object
         """
         key = f"{obj.__class__.__name__}.{obj.id}"
-        # print("key", key) # debug
         FileStorage.__objects[key] = obj
 
     def save(self):
@@ -39,7 +38,7 @@ class FileStorage:
             to_dict[key] = obj.to_dict()
 
         with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
-            json.dump(to_dict, f, indent=4)
+            json.dump(to_dict, f)
 
     def reload(self):
         """deserializes the JSON file to `__objects`."""
@@ -49,16 +48,10 @@ class FileStorage:
 
             new_dict = {}
             for obj_name, obj_details in _dict.items():
-                # print(f"{obj_name} -> {obj_details}")
-
                 _class = eval(obj_details["__class__"])
-            # print(_class)
                 obj = _class(**obj_details)
                 new_dict[obj_name] = obj
 
             FileStorage.__objects = new_dict
-            # print("-------------")
-            # print(FileStorage.__objects)
-            # print("-------------")
         except FileNotFoundError:
             pass
