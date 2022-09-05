@@ -43,7 +43,8 @@ class HBNBComand(cmd.Cmd):
                 HBNBComand.str_dict = eval(dict_)
                 pass
 
-            line_arg = line.replace('.', ' ').replace(', ', ' ').replace('(', ' ').replace(')', ' ')
+            line_arg = line.replace('.', ' ').replace(', ', ' ')\
+                .replace('(', ' ').replace(')', ' ')
 
             line_arg = line_arg.split()
             line_arg[0], line_arg[1] = line_arg[1], line_arg[0]
@@ -54,7 +55,6 @@ class HBNBComand(cmd.Cmd):
 
         return cmd.Cmd().precmd(line)
 
-    
     def do_quit(self, arg):
         """Quit command to exit the program"""
         return True
@@ -143,7 +143,7 @@ class HBNBComand(cmd.Cmd):
         """Updates an instance based on the class name and id\
             by adding or updating attribute"""
         args = line.split()
-        
+
         if HBNBComand.HBNBError(line, "update"):
             return
         if len(args) < 3:
@@ -183,6 +183,7 @@ class HBNBComand(cmd.Cmd):
 
     def emptyline(self):
         pass
+
 
 if __name__ == "__main__":
     HBNBComand().cmdloop()
