@@ -107,5 +107,8 @@ $ python3 unittest -m tests/test_console.py
 ```
 
 
-## Authors :red_nib:
+## Authors :black_nib:
+
+* **Obe Emmanuel Ogheneruro** <[CaptainAril](https://github.com/CaptainAril)>
+* **Rotimi Adebowale Owolabi** <[Rohteemie](https://github.com/Rohteemie)>
 
