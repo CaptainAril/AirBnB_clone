@@ -15,6 +15,7 @@ from models.review import Review
 
 
 class HBNBComand(cmd.Cmd):
+    """Defines the HBNBCommand class for console implemantation."""
     prompt = "(hbnb) "
 
     class_model = (
@@ -31,9 +32,11 @@ class HBNBComand(cmd.Cmd):
 
     @classmethod
     def striped(cls, arg):
+        """Strips `arg` string of first and last character. """
         return arg[1:-1]
 
     def precmd(self, line):
+        """Strips the line input before interpreted by `onecmd`."""
         if '.' in line:
             if '{' in line:
                 dict_ = re.search("{([^}]*)}", line)
@@ -56,15 +59,16 @@ class HBNBComand(cmd.Cmd):
         return cmd.Cmd().precmd(line)
 
     def do_quit(self, arg):
-        """Quit command to exit the program"""
+        """Quit command to exit the program."""
         return True
 
     def do_EOF(self, arg):
-        """EOF command to exit the program"""
+        """EOF signal to exit the program."""
         return True
 
     @classmethod
     def HBNBError(cls, line, command=None):
+        """Defines error handler method for HBNBCommand."""
         args = line.split()
         if not args:
             print("** class name missing **")
@@ -87,7 +91,9 @@ class HBNBComand(cmd.Cmd):
         return False
 
     def do_create(self, line):
-        """Creates a new instance of <class>."""
+        """Usage: create <class>
+        Create a new class instance and print its id.
+        """
         args = line.split()
         if HBNBComand.HBNBError(line, "create"):
             return
@@ -98,8 +104,9 @@ class HBNBComand(cmd.Cmd):
         storage.save()
 
     def do_show(self, line):
-        """Prints string representation of instance
-        based on class name and id."""
+        """Usage: show <class> <id> or <class>.show(<id>)
+        Display the string representation of a class instance of a given id.
+        """
         args = line.split()
         if HBNBComand.HBNBError(line, "show"):
             return
@@ -110,7 +117,8 @@ class HBNBComand(cmd.Cmd):
         print(_str)
 
     def do_destroy(self, line):
-        """Deletes an instance based on class name and id."""
+        """Usage: destroy <class> <id> or <class>.destroy(<id>)
+        Delete a class instance of a given id."""
         args = line.split()
         if HBNBComand.HBNBError(line,  "delete"):
             return
@@ -120,7 +128,9 @@ class HBNBComand(cmd.Cmd):
         storage.save()
 
     def do_all(self, line):
-        """Prints all sting representation based or not on the class name."""
+        """Usage: all or all <class> or <class>.all()
+        Display string representations of all instances of a given class.
+        If no class is specified, displays all instantiated objects."""
         args = line.split()
         _str = []
         obj = storage.all()
@@ -140,8 +150,11 @@ class HBNBComand(cmd.Cmd):
         print(_str)
 
     def do_update(self, line):
-        """Updates an instance based on the class name and id\
-            by adding or updating attribute"""
+        """Usage: update <class> <id> <attribute_name> <attribute_value> or
+       <class>.update(<id>, <attribute_name>, <attribute_value>) or
+       <class>.update(<id>, <dictionary>)
+        Update a class instance of a given id by adding or updating
+        a given attribute key/value pair or dictionary."""
         args = line.split()
 
         if HBNBComand.HBNBError(line, "update"):
@@ -168,6 +181,8 @@ class HBNBComand(cmd.Cmd):
         storage.save()
 
     def do_count(self, line):
+        """Usage: count <class> or <class>.count()
+        Retrieve the number of instances of a given class."""
         if HBNBComand.HBNBError(line, "count"):
             return
         count = 0
@@ -182,6 +197,7 @@ class HBNBComand(cmd.Cmd):
         storage.save()
 
     def emptyline(self):
+        """Do nothing if empty line is passed."""
         pass
 
 
