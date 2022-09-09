@@ -2,7 +2,6 @@
   <img src="https://raw.githubusercontent.com/CaptainAril/AirBnB_clone/master/img/ass1.png">
 </p>
 
-
 <h1 align="center">The AirBnB Project.</h1>
 <p align="center">The Console.</p>
 
