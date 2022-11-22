@@ -59,11 +59,13 @@ class HBNBComand(cmd.Cmd):
         return cmd.Cmd().precmd(line)
 
     def do_quit(self, arg):
-        """Quit command to exit the program."""
+        """Usage: quit
+        Exits the program."""
         return True
 
     def do_EOF(self, arg):
-        """EOF signal to exit the program."""
+        """Usage: EOF
+        Exits the program."""
         return True
 
     @classmethod
@@ -203,3 +205,5 @@ class HBNBComand(cmd.Cmd):
 
 if __name__ == "__main__":
     HBNBComand().cmdloop()
+    """Runs the command line console in a loop and prompts repeatedly unless
+    `quit` or `EOF` command is given. """
