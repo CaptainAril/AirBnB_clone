@@ -158,6 +158,7 @@ class HBNBComand(cmd.Cmd):
         Update a class instance of a given id by adding or updating
         a given attribute key/value pair or dictionary."""
         args = line.split()
+        print(args)
 
         if HBNBComand.HBNBError(line, "update"):
             return
