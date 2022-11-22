@@ -12,6 +12,9 @@ from models.state import State
 from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
+import sys
+from unittest.mock import patch
+from io import StringIO
 
 
 class HBNBComand(cmd.Cmd):
@@ -202,6 +205,10 @@ class HBNBComand(cmd.Cmd):
     def emptyline(self):
         """Do nothing if empty line is passed."""
         pass
+
+
+with patch('sys.stdout', new=StringIO()) as f:
+    HBNBComand().onecmd("help show")
 
 
 if __name__ == "__main__":

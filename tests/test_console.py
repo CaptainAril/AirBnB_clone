@@ -1566,5 +1566,11 @@ class TestHBNBCommand_count(unittest.TestCase):
             self.assertEqual("1", output.getvalue().strip())
 
 
+with patch('sys.stdout', new=StringIO()) as f:
+    HBNBCommand().onecmd("help show")
+
+
 if __name__ == "__main__":
     unittest.main()
+    with patch('sys.stdout', new=StringIO()) as f:
+        HBNBCommand().onecmd("help show")
